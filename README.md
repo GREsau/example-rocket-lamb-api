@@ -13,9 +13,8 @@ Requirements:
 - An S3 bucket
 
 ```sh
-# Builds the lambda binary in a Docker container and outputs the packaged zip file.
-# Use build.bat if you're on Windows
-./build.sh 
+# Builds the lambda binary in a Docker container and outputs the packaged zip file
+docker-compose run --rm build
 
 S3_BUCKET=my-s3-bucket-name
 # Choose any name for the CloudFormation stack

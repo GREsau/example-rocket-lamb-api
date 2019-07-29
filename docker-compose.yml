@@ -1,0 +1,10 @@
+version: '2.0'
+services:
+  # builds lambda package
+  build:
+    image: softprops/lambda-rust
+    volumes:
+    - .:/code
+    - ~/.cargo/registry:/root/.cargo/registry
+    environment:
+    - BIN=lambda
