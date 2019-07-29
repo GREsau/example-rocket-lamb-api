@@ -1,0 +1,17 @@
+[package]
+name = "example_rocket_lamb_api"
+description = "An example of using Rocket Lamb with supporting build/deploy scripts"
+repository = "https://github.com/GREsau/example-rocket-lamb-api"
+version = "0.1.0"
+authors = ["Graham Esau <graham.esau@vonage.com>"]
+edition = "2018"
+license = "MIT"
+readme = "README.md"
+keywords = ["rocket", "web", "lambda"]
+default-run = "main"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = { version = "0.4.2", default-features = false }
+rocket_lamb = "0.1.1"
