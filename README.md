@@ -4,6 +4,10 @@ A simple web API written using [Rocket](https://rocket.rs/), with two binaries:
 - `main`, a normal application which you can run locally for testing
 - `lambda`, written to be run as an AWS Lambda function, using [Rocket Lamb](https://github.com/GREsau/rocket-lamb)
 
+It has two endpoints defined:
+- `/` (the root path) - returns `Hello world` as a plaintext response
+- `/rocket` - returns a PNG image
+
 ## Deploying to AWS Lambda
 Deployment can be done using AWS CloudFormation using the [Serverless Application Model](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html). The required CloudFormation template is already set up in [template.yaml](template.yaml).
 
