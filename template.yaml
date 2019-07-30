@@ -5,7 +5,7 @@ Description: Example Rocket Lamb API
 Globals:
   Api:
     BinaryMediaTypes:
-      - image~1png
+      - "image/png"
 
 Resources:
   HelloWorldFunction:
