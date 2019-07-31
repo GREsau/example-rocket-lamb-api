@@ -35,7 +35,7 @@ aws cloudformation describe-stacks --query "Stacks[0].Outputs" --stack-name $STA
 ```
 
 ## Testing Locally
-The easiest way of running the application locally is just with `cargo run`, which will run `main.js`. This configures and launches a bog-standard Rocket server, without using Rocket Lamb.
+The easiest way of running the application locally is just with `cargo run`, which will run [`main.rs`](src/bin/main.rs). This configures and launches a bog-standard Rocket server, without using Rocket Lamb.
 
 Another way is to use the AWS [SAM CLI](https://github.com/awslabs/aws-sam-cli), which can be used to spin up a fake lambda environment in Docker with a mock API Gateway. While more of a hassle to run, this will also test both the CloudFormation configuration in template.yaml, and the application's integration with Lambda and API Gateway. To run the app using the SAM CLI:
 ```sh
