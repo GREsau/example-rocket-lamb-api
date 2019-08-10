@@ -2,14 +2,8 @@
 
 #[macro_use]
 extern crate rocket;
-#[macro_use]
-extern crate rust_embed;
 
 use rocket::{http::ContentType, response::Content, Rocket};
-
-#[derive(RustEmbed)]
-#[folder = "static/"]
-struct StaticFiles;
 
 #[get("/")]
 fn hello() -> &'static str {
@@ -18,8 +12,8 @@ fn hello() -> &'static str {
 
 // /rocket returns binary data (a PNG image)
 #[get("/rocket")]
-fn pic() -> Option<Content<Vec<u8>>> {
-    let bytes = StaticFiles::get("rocket.png")?.into_owned();
+fn pic() -> Option<Content<&'static [u8]>> {
+    let bytes = include_bytes!("../static/rocket.png");
     let content_type = ContentType::new("image", "png");
     Some(Content(content_type, bytes))
 }

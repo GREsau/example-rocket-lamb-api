@@ -15,4 +15,3 @@ default-run = "main"
 [dependencies]
 rocket = { version = "0.4.2", default-features = false }
 rocket_lamb = "0.3.0"
-rust-embed = "5.1.0"
