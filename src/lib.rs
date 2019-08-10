@@ -12,10 +12,10 @@ fn hello() -> &'static str {
 
 // /rocket returns binary data (a PNG image)
 #[get("/rocket")]
-fn pic() -> Option<Content<&'static [u8]>> {
+fn pic() -> Content<&'static [u8]> {
     let bytes = include_bytes!("../static/rocket.png");
     let content_type = ContentType::new("image", "png");
-    Some(Content(content_type, bytes))
+    Content(content_type, bytes)
 }
 
 pub fn rocket() -> Rocket {
