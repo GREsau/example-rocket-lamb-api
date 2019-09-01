@@ -25,10 +25,10 @@ S3_BUCKET=my-s3-bucket-name
 STACK_NAME=my-rocket-api
 
 # Uploads the CloudFormation template and zipped binary to S3
-aws cloudformation package --output-template-file packaged.yaml --s3-bucket $S3_BUCKET
+aws cloudformation package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket $S3_BUCKET
 
 # Deploys the CloudFormation stack
-aws cloudformation deploy --template-file packaged.yaml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM
+aws cloudformation deploy --template-file packaged.yaml --capabilities CAPABILITY_IAM --stack-name $STACK_NAME
 
 # Outputs the API Gateway URL that you can use to call your API
 aws cloudformation describe-stacks --query "Stacks[0].Outputs" --stack-name $STACK_NAME
