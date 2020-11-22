@@ -4,7 +4,7 @@ services:
   build:
     image: softprops/lambda-rust
     volumes:
-    - .:/code
-    - ~/.cargo/registry:/root/.cargo/registry
+    - .:/code:Z
+    - ~/.cargo/registry:/root/.cargo/registry:Z
     environment:
     - BIN=lambda
